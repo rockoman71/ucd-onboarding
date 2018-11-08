@@ -1,0 +1,34 @@
+{
+  "name": "Deploy",
+  "active": "true",
+  "component": "1665ac13-8652-9981-14f6-f4bcb35942b2",
+  "configActionType": "ADD",
+  "defaultWorkingDir": "${p:resource/work.dir}/${p:component.name}",
+  "description": "Description.",
+  "inventoryActionType": "ADD",
+  "propDefs": [],
+  "takesVersion": true,
+  "status": "Active",
+  "rootActivity": {
+            "edges": [{
+                "to": "ec8aa4d925ccba03c1956312de2a0f",
+                "type": "ALWAYS",
+                "value": ""
+            }],
+            "offsets": [{
+                "name": "ec8aa4d925ccba03c1956312de2a0f",
+                "x": -5,
+                "y": 420,
+                "h": 80,
+                "w": 120
+            }],
+            "layoutMode": "manual",
+            "type": "graph",
+            "name": "GRAPH",
+            "children": [{
+                "type": "finish",
+                "name": "ec8aa4d925ccba03c1956312de2a0f",
+                "children": []
+            }]
+        }
+}

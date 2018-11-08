@@ -1,0 +1,115 @@
+{
+  "name": "Deploy",
+  "application": "APP_ID",
+  "description": "This process deploys components in series",
+  "inventoryManagementType": "AUTOMATIC",
+  "offlineAgentHandling": "PRE_EXECUTION_CHECK",
+  "rootActivity": {
+    "type": "graph",
+    "name": "GRAPH",
+    "edges": [
+      {
+        "to": "Deploy DB",
+        "type": "ALWAYS",
+        "value": ""
+      },      
+      {
+        "to": "Deploy Web",
+        "from": "Deploy DB",
+        "type": "SUCCESS",
+        "value": ""
+      },      
+      {
+        "to": "FINISH",
+        "from": "Deploy Web",
+        "type": "SUCCESS",
+        "value": ""
+      }
+    ],
+    "offsets": [
+      {
+        "name": "Deploy DB",
+        "x": "-35",
+        "y": "140"
+      },      
+      {
+        "name": "Deploy Web",
+        "x": "-35",
+        "y": "280"
+      },      
+      {
+        "name": "FINISH",
+        "x": "0",
+        "y": "420"
+      }
+    ],
+    "children": [
+      {
+        "componentName": "APP_PREFIX-DB",
+        "failFast": "false",
+        "runOnlyOnFirst": "false",
+        "maxIteration": "-1",
+        "type": "componentEnvironmentIterator",
+        "name": "Deploy DB",
+        "children": [
+          {
+            "componentName": "APP_PREFIX-DB",
+            "status": "Active",
+            "type": "inventoryVersionDiff",
+            "name": "inventoryVersionCheck",
+            "children": [
+              {
+                "componentName": "APP_PREFIX-DB",
+                "componentProcessName": "Deploy",
+                "allowFailure": false,
+                "properties": {
+                },
+                "type": "componentProcess",
+                "name": "Deploy DB",
+                "children": [
+                ]
+              }
+            ]
+          }
+        ]
+      },      
+      {
+        "componentName": "APP_PREFIX-APP",
+        "failFast": "false",
+        "runOnlyOnFirst": "false",
+        "maxIteration": "-1",
+        "type": "componentEnvironmentIterator",
+        "name": "Deploy Web",
+        "children": [
+          {
+            "componentName": "APP_PREFIX-APP",
+            "status": "Active",
+            "type": "inventoryVersionDiff",
+            "name": "inventoryVersionCheck",
+            "children": [
+              {
+                "componentName": "APP_PREFIX-APP",
+                "componentProcessName": "Deploy",
+                "allowFailure": false,
+                "properties": {
+                },
+                "type": "componentProcess",
+                "name": "Deploy Web",
+                "children": [
+                ]
+              }
+            ]
+          }
+        ]
+      },      
+      {
+        "type": "finish",
+        "name": "FINISH",
+        "children": [
+        ]
+      }
+    ],
+    "propDefs": [
+    ]
+  }
+}

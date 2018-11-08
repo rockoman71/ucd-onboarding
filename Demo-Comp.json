@@ -1,0 +1,49 @@
+{
+    "name": "TEMPLATE_NAME",
+    "description": "",
+    "ignoreQualifiers": 0,
+    "componentType": "STANDARD",
+    "tags": [],
+    "active": true,
+    "envPropDefs": [],
+    "resPropDefs": [],
+    "propDefs": [],
+    "properties": [],
+    "processes": [{
+        "name": "Deploy",
+        "description": "",
+        "defaultWorkingDir": "${p:resource\/work.dir}\/${p:component.name}",
+        "takesVersion": true,
+        "inventoryActionType": "ADD",
+        "status": "Active",
+        "configActionType": "ADD",
+        "active": true,
+        "path": "",
+        "deleted": false,
+        "propDefs": [],
+        "rootActivity": {
+            "edges": [{
+                "to": "ec8aa4d925ccba03c1956312de2a0f",
+                "type": "ALWAYS",
+                "value": ""
+            }],
+            "offsets": [{
+                "name": "ec8aa4d925ccba03c1956312de2a0f",
+                "x": -5,
+                "y": 420,
+                "h": 80,
+                "w": 120
+            }],
+            "layoutMode": "manual",
+            "type": "graph",
+            "name": "d80a37df-4118-4de6-8e0f-e7059becf479",
+            "children": [{
+                "type": "finish",
+                "name": "ec8aa4d925ccba03c1956312de2a0f",
+                "children": []
+            }]
+        }
+    }],
+    "genericProcesses": [],
+    "teamMappings": []
+}

@@ -1,0 +1,9 @@
+{
+  "application": "APP_ID",
+  "description": "Requesting deployment",
+  "applicationProcess": "Deploy",
+  "environment": "ENV",
+  "onlyChanged": "false",
+  "snapshot": "SNAPSHOT",
+  "versions": []
+}
