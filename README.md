@@ -17,3 +17,5 @@ java.lang.NoSuchMethodError: org.codehaus.groovy.runtime.DefaultGroovyMethods.le
 ...use and older Groovy such as 2.5.3"
 
 http://groovy-lang.org/download.html
+
+groovy-2.5.3/bin/groovy -cp lib/http-builder-0.7.2.jar:lib/dependencies/* seed-ucd.groovy
